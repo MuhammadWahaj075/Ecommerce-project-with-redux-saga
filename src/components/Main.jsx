@@ -43,12 +43,16 @@ const Main = () => {
             key={item.id}
             className="product-item"
             width="auto"
-            margin="10px 20px"
+            margin="30px 20px"
             flexWrap="wrap"
             flexDirection="column"
           >
             {" "}
-            <Paper sx={{ height: "auto", width: "500px" }} elevation={10}>
+            <Paper
+              id="product-card"
+              sx={{ height: "auto", width: "500px" }}
+              elevation={10}
+            >
               <Box id="image" component="img" src={item.image} />
 
               <Typography id="text">title: {item.title}</Typography>

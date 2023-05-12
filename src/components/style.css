@@ -36,3 +36,11 @@
   justify-content: center;
   align-items: center;
 }
+
+#product-card {
+  transition: all ease 0.3s;
+}
+
+#product-card:hover {
+  transform: scale(1.1);
+}
