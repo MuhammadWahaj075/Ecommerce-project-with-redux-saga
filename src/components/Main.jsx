@@ -12,6 +12,7 @@ import { Delete } from "@mui/icons-material";
 const Main = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.productDataState);
+
   console.log("🚀 ~ file: Main.jsx:12 ~ Main ~ data:", data);
 
   useEffect(() => {
@@ -69,16 +70,30 @@ const Main = () => {
               <Typography id="text">price: {item.price}</Typography>
               <Typography id="text">category: {item.category}</Typography>
               <Box ml="1rem">
-                <ReactStars value={item.rating.rate} count={5} size={40} />
+                <ReactStars
+                  value={item.rating.rate}
+                  edit={false}
+                  count={5}
+                  size={40}
+                />
               </Box>
-              <Box ml="1rem" flexWrap="wrap" mt="1rem" mb="1rem">
+              <Box
+                display="flex"
+                flexDirection="column"
+                flexWrap="wrap"
+                justifyContent="center"
+                alignItems="center"
+                mt="1rem"
+                mb="1rem"
+              >
+              
                 <Button
                   onClick={() => dispatch(addToCart(item))}
                   variant="outlined"
                   color="success"
                   sx={{
                     fontFamily: "fantasy",
-                    width: "24.5vw",
+                    width: "90%",
                     "&:hover": {
                       background: "white",
                     },
@@ -92,7 +107,7 @@ const Main = () => {
                   sx={{
                     // ml: "1rem",
                     fontFamily: "fantasy",
-                    width: "24.5vw",
+                    width: "90%",
                     mt: "1rem",
                   }}
                   variant="outlined"
